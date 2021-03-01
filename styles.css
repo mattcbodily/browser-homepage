@@ -1,6 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     height: 100vh;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     background-image: url('./assets/mountain-scape.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.header-compartment, .crypto-display {
+    height: 65px;
+    width: 150px;
+    border-radius: 5px;
+    background: rgba(0,0,0,.5);
+}
+
+#clock-display {
+    height: 250px;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+}
+
+#crypto-flex {
+    height: 65px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
