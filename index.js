@@ -5,6 +5,19 @@ today = `${mm}/${dd}`;
 
 document.getElementById('date-display').innerText = today;
 
+function getWeather(){
+    let location = null;
+
+    if(window.navigator.geolocation){
+        location = window.navigator.geolocation.getCurrentPosition(console.log)
+        console.log(location)
+    } else {
+        location = 'User has denied location settings'
+    }
+}
+
+getWeather()
+
 function currentTime(){
     let date = new Date();
     let hour = date.getHours();
@@ -17,7 +30,7 @@ function currentTime(){
     min = updateTime(min)
 
     document.getElementById('clock-display').innerText = `${hour}:${min} ${timeOfDay}`;
-    var t = setTimeout(function(){ currentTime() }, 2000)
+    var t = setTimeout(function(){ currentTime() }, 1000)
 }
 
 function updateTime(time){
