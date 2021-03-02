@@ -3,7 +3,11 @@ import './CryptoPrices.css'
 
 const CryptoPrices = () => {
     return (
-        <section></section>
+        <section id='crypto-flex'>
+            <div className='crypto-display'>Crypto 1</div>
+            <div className='crypto-display'>Crypto 2</div>
+            <div className='crypto-display'>Crypto 3</div>
+        </section>
     )
 }
 

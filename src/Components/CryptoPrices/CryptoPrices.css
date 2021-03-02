@@ -1,0 +1,15 @@
+#crypto-flex {
+    height: 65px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.crypto-display {
+    height: 65px;
+    width: 150px;
+    border-radius: 5px;
+    background: rgba(0,0,0,.5);
+    font-size: 24px;
+}
