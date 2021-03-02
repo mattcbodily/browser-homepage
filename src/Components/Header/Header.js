@@ -35,8 +35,12 @@ const Header = () => {
         <header>
             <section id='date-display' className='header-compartment'>{date}</section>
             <section className='header-compartment'>
-                <p>{weather.main?.temp?.toFixed(0)}° {weather.weather[0].main}</p>
-                <p id='location'>{weather.name}</p>
+                {weather.weather
+                ? (<>
+                    <p>{weather.main.temp.toFixed(0)}° {weather.weather[0].main}</p>
+                    <p id='location'>{weather.name}</p>
+                   </>)
+                : null}
             </section>
         </header>
     )
