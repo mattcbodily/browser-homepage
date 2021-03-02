@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Clock.css'
+import { update } from 'lodash'
 
 const Clock = () => {
     let [time, setTime] = useState('')
@@ -16,20 +17,22 @@ const Clock = () => {
         let date = new Date();
         let hour = date.getHours();
         let min = date.getMinutes();
+        let seconds = date.getSeconds();
         let timeOfDay = 'AM';
         timeOfDay = hour >= 12 ? 'PM' : 'AM'
     
         hour = (hour === 0) ? 12 : (hour > 12) ? hour - 12 : hour;
         hour = updateTime(hour)
         min = updateTime(min)
+        seconds = updateTime(seconds)
 
-        setTime(`${hour}:${min} ${timeOfDay}`)
+        setTime(`${hour}:${min}:${seconds} ${timeOfDay}`)
     }
 
     useEffect(() => {
         currentTime()
         setTimeout(function(){ currentTime() }, 1000)
-    })
+    }, [currentTime])
 
     return (
         <section id='clock-display'>{time}</section>
