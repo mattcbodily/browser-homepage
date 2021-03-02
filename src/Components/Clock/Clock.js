@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './Clock.css'
-import { update } from 'lodash'
 
 const Clock = () => {
     let [time, setTime] = useState('')
