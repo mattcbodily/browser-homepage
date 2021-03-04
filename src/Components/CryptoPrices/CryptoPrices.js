@@ -11,8 +11,6 @@ const CryptoPrices = () => {
         .catch(err => console.log(err))
     }, [])
 
-    console.log(prices)
-
     return (
         <section id='crypto-flex'>
             <div className='crypto-display'>BTC ${prices.bitcoin?.usd.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
