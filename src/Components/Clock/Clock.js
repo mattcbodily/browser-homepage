@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import './Clock.css'
 
 const Clock = () => {
@@ -12,7 +12,7 @@ const Clock = () => {
         }
     }
 
-    const currentTime = () => {
+    const currentTime = useCallback(() => {
         let date = new Date();
         let hour = date.getHours();
         let min = date.getMinutes();
@@ -26,12 +26,12 @@ const Clock = () => {
         seconds = updateTime(seconds)
 
         setTime(`${hour}:${min}:${seconds} ${timeOfDay}`)
-    }
+    }, [])
 
     useEffect(() => {
         currentTime()
         setTimeout(function(){ currentTime() }, 1000)
-    }, [currentTime])
+    }, [time, currentTime])
 
     return (
         <section id='clock-display'>{time}</section>

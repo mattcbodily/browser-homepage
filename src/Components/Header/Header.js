@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './Header.css'
 
+let monthNames = ["January","February","March","April", "May","June","July","August", "September", "October","November","December"];
+
 const Header = () => {
     let [date, setDate] = useState('')
     let [coords, setCoords] = useState({})
     let [weather, setWeather] = useState({})
-
-    let monthNames =["January","February","March","April",
-    "May","June","July","August",
-    "September", "October","November","December"];
 
     useEffect(() => {
         let today = new Date()
