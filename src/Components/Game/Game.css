@@ -1,6 +1,4 @@
-.game {
-    height: 500px;
-    width: 520px;
+#game {
     background: white;
     position: fixed;
     top: 50%;
