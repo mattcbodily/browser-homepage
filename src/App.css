@@ -10,11 +10,22 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-image: url('./assets/mountain-scape.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Roboto', sans-serif;
   color: white;
+}
+
+#mountain {
+  background-image: url('./assets/mountain-scape.jpg');
+}
+
+#space {
+  background-image: url('./assets/space-background.jpg');
+}
+
+#ocean {
+  background-image: url('./assets/ocean-background.jpg');
 }
 
 section, div {

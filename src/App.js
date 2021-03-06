@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from './Components/Header/Header'
 import Clock from './Components/Clock/Clock'
 import CryptoPrices from './Components/CryptoPrices/CryptoPrices'
-import Game from './Components/Game/Game'
+import SecretMenu from './Components/SecretMenu/SecretMenu'
 import './App.css';
 
 const konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
@@ -18,6 +18,7 @@ function App() {
       if(event.key === 'Enter'){
         if(JSON.stringify(userInput) === JSON.stringify(konami)){
           setCheatDisplay(true)
+          userInput.splice(0)
         }
       } else {
         userInput.push(event.key)
@@ -26,12 +27,12 @@ function App() {
   }, [])
 
   return (
-    <div className='App'>
+    <div id='mountain' className='App'>
       <Header />
       <Clock />
       <CryptoPrices />
       {cheatDisplay
-        ? <Game />
+        ? <SecretMenu showMenu={setCheatDisplay} />
         : null}
     </div>
   );
