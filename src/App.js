@@ -9,6 +9,7 @@ const konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'Ar
 
 function App() {
   let [cheatDisplay, setCheatDisplay] = useState(false)
+  let [theme, setTheme] = useState('mountain')
 
   useEffect(() => {
     const userInput = []
@@ -27,12 +28,12 @@ function App() {
   }, [])
 
   return (
-    <div id='mountain' className='App'>
+    <div id={theme} className='App'>
       <Header />
       <Clock />
       <CryptoPrices />
       {cheatDisplay
-        ? <SecretMenu showMenu={setCheatDisplay} />
+        ? <SecretMenu showMenu={setCheatDisplay} theme={theme} themeFn={setTheme} />
         : null}
     </div>
   );
