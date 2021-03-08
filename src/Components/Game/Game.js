@@ -30,7 +30,7 @@ const Game = props => {
         }
     }, [draw])
 
-    return <canvas id='game' ref={canvasRef} {...props} height='500' width='520'></canvas>
+    return <canvas id='game' ref={canvasRef} {...props} height='250' width='520'></canvas>
 }
 
 export default Game

@@ -13,13 +13,13 @@ const SecretMenu = props => {
         <section className='secret-menu'>
             <h3>Secret Menu</h3>
             <h4>Select a Theme</h4>
-            <div onClick={() => setThemeMenu(true)}>{props.theme}</div>
+            <div id='theme-display' onClick={() => setThemeMenu(!themeMenu)}>{props.theme}</div>
             {themeMenu
                 ? (
-                    <div>
-                        <p onClick={() => changeTheme('mountain')}>Mountain</p>
-                        <p onClick={() => changeTheme('space')}>Space</p>
-                        <p onClick={() => changeTheme('ocean')}>Ocean</p>
+                    <div id='theme-flex'>
+                        <p onClick={() => changeTheme('mountain')}>mountain</p>
+                        <p onClick={() => changeTheme('space')}>space</p>
+                        <p onClick={() => changeTheme('ocean')}>ocean</p>
                     </div>
                 )
                 : null}
