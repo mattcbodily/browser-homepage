@@ -5,7 +5,14 @@ const player = {
     width: 25
 }
 
-function Obstacle(){
-    this.x = 275;
-    this.y = 200
+class Obstacle {
+    constructor(){
+        this.x = 275;
+        this.y = 200;
+        this.speed = 1;
+    }
+
+    move(){
+        this.x -= this.speed;
+    }
 }
