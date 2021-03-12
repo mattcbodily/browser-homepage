@@ -23,6 +23,7 @@ const SecretMenu = props => {
                     </div>
                 )
                 : null}
+            <button>Play Game</button>
             <button onClick={() => props.showMenu(false)}>Exit</button>
         </section>
     )
